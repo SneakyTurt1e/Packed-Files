@@ -22,7 +22,8 @@ mysqldump -u $DBS_User -p $DBS_Name > /root/Backup/$DBS_Name.sql
 Pack_All(){
 cd /
 mkdir DataBase_Backup_$date
-mv /root/Backup/* /DataBase_Backup_$date
+mv /root/Backup/$Web_Name"_"$date.tar.gz /DataBase_Backup_$date
+mv /root/Backup/$DBS_Name.sql /DataBase_Backup_$date
 #tar -cvPf DataBase_Backup_$date.tar.gz /DataBase_Backup_$date >> /dev/null
 zip -q -r DataBase_Backup_$date.zip /DataBase_Backup_$date >> /dev/null
 mv DataBase_Backup_$date.zip /root/Backup/
